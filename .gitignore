@@ -1,3 +1,7 @@
+Company.csv
+Company_Tweet.csv
+Tweet.csv
+config.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
