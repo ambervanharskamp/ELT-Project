@@ -15,14 +15,13 @@ CREATE TABLE company_index (
 -- Create Tweet table for raw data to be loaded into
 CREATE TABLE tweet_df_new (
     tweet_id BIGINT NOT NULL,
-    post_date BIGINT NOT NULL,
     body VARCHAR NOT NULL,	
     comment_num INT NOT NULL,
     retweet_num	INT NOT NULL,	
     like_num INT NOT NULL,
+	datetime TIMESTAMP NOT NULL,
 	PRIMARY KEY (tweet_id)
 );
-
 -- Create company_tweet, this is a junction table
 CREATE TABLE tweet_index (
 	id INT NOT NULL,
