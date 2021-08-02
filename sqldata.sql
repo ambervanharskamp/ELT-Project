@@ -2,6 +2,7 @@
 DROP TABLE IF EXISTS company_index;
 DROP TABLE IF EXISTS tweet_df_new;
 DROP TABLE IF EXISTS tweet_index;
+DROP TABLE IF EXISTS stock_data;
 
 -- Create company_df table for raw data to be loaded into
 CREATE TABLE company_index (
@@ -19,7 +20,7 @@ CREATE TABLE tweet_df_new (
     comment_num INT NOT NULL,
     retweet_num	INT NOT NULL,	
     like_num INT NOT NULL,
-	datetime TIMESTAMP NOT NULL,
+	tweet_date DATE NOT NULL,
 	PRIMARY KEY (tweet_id)
 );
 -- Create company_tweet, this is a junction table
@@ -29,4 +30,20 @@ CREATE TABLE tweet_index (
     ticker_symbol VARCHAR NOT NULL,
     PRIMARY KEY (id )
 );
--- Joins tables
+
+-- Create  Stock_data, this is a junction table
+CREATE TABLE stock_data (
+	id INT NOT NULL,
+    ticker_symbol VARCHAR NOT NULL,
+    stock_date DATE NOT NULL,
+    open_price INT NOT NULL,
+    close_price INT NOT NULL,
+    trading_volume INT NOT NULL,
+    PRIMARY KEY (id )
+);
+-- Query tables
+Select * FROM company_index;
+Select * FROM tweet_df_new;
+Select * FROM tweet_index;
+Select * FROM stock_data;
+
